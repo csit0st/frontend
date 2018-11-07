@@ -1,0 +1,73 @@
+﻿<Page
+    x:Class="MikroservicesFrontEnd.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MikroservicesFrontEnd"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Pivot Title="TemPress" Margin="5,5,5,5">
+
+            <PivotItem Header="Heute" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid Margin="0,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Canvas HorizontalAlignment="Center" Height="407" Margin="0,300,0,0" VerticalAlignment="Top" Width="1150" Background="LightGray">
+                        <TextBlock Text="03:00   06:00   09:00   12:00   15:00   16:00   18:00   21:00   24:00" Height="50" Width="1150" FontSize="32" TextAlignment="Center" Margin="0,350,0,0"/>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Left" Height="250" Margin="0,0,0,0" VerticalAlignment="Top" Width="500" Background="Red">
+                        <TextBlock Name="tbxTemperatureT" Canvas.Left="0" Canvas.Top="0" Text="Aktuell: --- °C" TextWrapping="Wrap" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="52" FontFamily="Calibri" FontWeight="Bold" Margin="0,0,0,0"/>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Right" Height="250" Margin="0,0,0,0" VerticalAlignment="Top" Width="500" Background="Blue">
+                        <TextBlock Name="tbxPressureT" Canvas.Left="0" Canvas.Top="0" Text="Aktuell: --- hPa" TextWrapping="Wrap" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="52" FontFamily="Calibri" FontWeight="Bold"/>
+                    </Canvas>
+
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="Heute" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid Margin="0,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Canvas HorizontalAlignment="Center" Height="407" Margin="0,300,0,0" VerticalAlignment="Top" Width="1150" Background="LightGray">
+                        <TextBlock Text="03:00   06:00   09:00   12:00   15:00   16:00   18:00   21:00   24:00" Height="50" Width="1150" FontSize="32" TextAlignment="Center" Margin="0,350,0,0"/>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Left" Height="250" Margin="0,0,0,0" VerticalAlignment="Top" Width="500" Background="Red">
+                        <TextBlock Name="tbxTemperatureY" Canvas.Left="0" Canvas.Top="0" Text="Aktuell: --- °C" TextWrapping="Wrap" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="52" FontFamily="Calibri" FontWeight="Bold" Margin="0,0,0,0"/>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Right" Height="250" Margin="0,0,0,0" VerticalAlignment="Top" Width="500" Background="Blue">
+                        <TextBlock Name="tbxPressureY" Canvas.Left="0" Canvas.Top="0" Text="Aktuell: --- hPa" TextWrapping="Wrap" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="52" FontFamily="Calibri" FontWeight="Bold"/>
+                    </Canvas>
+
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="Heute" Margin="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <Grid Margin="0,10,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Canvas HorizontalAlignment="Center" Height="407" Margin="0,300,0,0" VerticalAlignment="Top" Width="1150" Background="LightGray">
+                        <TextBlock Text="03:00   06:00   09:00   12:00   15:00   16:00   18:00   21:00   24:00" Height="50" Width="1150" FontSize="32" TextAlignment="Center" Margin="0,350,0,0"/>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Left" Height="250" Margin="0,0,0,0" VerticalAlignment="Top" Width="500" Background="Red">
+                        <TextBlock Name="tbxTemperatureW" Canvas.Left="0" Canvas.Top="0" Text="Aktuell: --- °C" TextWrapping="Wrap" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="52" FontFamily="Calibri" FontWeight="Bold" Margin="0,0,0,0"/>
+                    </Canvas>
+                    <Canvas HorizontalAlignment="Right" Height="250" Margin="0,0,0,0" VerticalAlignment="Top" Width="500" Background="Blue">
+                        <TextBlock Name="tbxPressureW" Canvas.Left="0" Canvas.Top="0" Text="Aktuell: --- hPa" TextWrapping="Wrap" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="52" FontFamily="Calibri" FontWeight="Bold"/>
+                    </Canvas>
+
+                </Grid>
+            </PivotItem>
+
+        </Pivot>
+        <Grid Margin="0,10,10,0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Button x:Name="btnLogout" Content="Logout" HorizontalAlignment="Left" Margin="1255,63,0,0" VerticalAlignment="Top" Width="100">
+                <Button.Flyout>
+                    <Flyout>
+                        <StackPanel>
+                            <TextBlock Text="Sind Sie sicher?"/>
+                            <Button Content="Logout" Click="Button_Click"/>
+                        </StackPanel>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
