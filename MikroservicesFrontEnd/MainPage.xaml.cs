@@ -32,6 +32,7 @@ namespace MikroservicesFrontEnd
             EntryManager.FetchAllData();
             Task.Delay(5000).Wait();
             LoadData();
+            AASConnection.StartConnection();
         }
 
         public void LoadData()
