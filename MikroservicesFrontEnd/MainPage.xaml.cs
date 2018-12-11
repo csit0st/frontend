@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Threading.Tasks;
+using WinRTXamlToolkit.Controls.DataVisualization.Charting;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -27,25 +28,21 @@ namespace MikroservicesFrontEnd
         public MainPage()
         {
             this.InitializeComponent();
-            
+            //DASConnection.TestDataWeek();
+            EntryManager.FetchAllData();
+            Task.Delay(5000).Wait();
+            LoadData();
         }
 
-        public void TestData()
+        public void LoadData()
         {
-            Task<string> testt = DASConnection.GetData();
-            Debug.WriteLine("ANSWER:");
-            testt.Wait();
-            Debug.WriteLine(testt.Result);
-            Debug.WriteLine("END");
-        }
+            //Entry entry = DASConnection.TestDataCurrent();
+            //tbxTemperatureT.Text = "Zeit: " + entry.Time.TimeOfDay.ToString() + " \n Wert: " + entry.Value + " °C";
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Task<string> testt = DASConnection.GetData();
-            Debug.WriteLine("ANSWER:");
-            testt.Wait();
-            Debug.WriteLine(testt.Result);
-            Debug.WriteLine("END");
+            ((LineSeries)lineChartToday.Series[0]).ItemsSource = EntryManager.GetDataOfToday();
+            //((LineSeries)lineChartYesterday.Series[0]).ItemsSource = DASConnection.TestDataDay();
+            //((LineSeries)lineChartLastWeek.Series[0]).ItemsSource = DASConnection.TestDataWeek();
+            //((LineSeries)lineChartLastWeek.Series[0]).
         }
     }
 }

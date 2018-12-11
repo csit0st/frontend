@@ -3,3 +3,8 @@
 ################################################################################
 
 /MikroservicesFrontEnd/bin/x64/Debug
+/MikroservicesFrontEnd/obj/ARM/Debug
+/MikroservicesFrontEnd/obj/x64/Debug
+/MikroservicesFrontEnd/obj (1)/x64/Debug
+/MikroservicesFrontEnd/obj
+/.vs/MikroservicesFrontEnd/v15
