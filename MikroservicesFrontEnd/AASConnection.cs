@@ -18,6 +18,11 @@ namespace MikroservicesFrontEnd
             StartClient();
         }
 
+        public static bool Login(string user, string password)
+        {
+            return true;
+        }
+
         static string EncryptString(string input)
         {
             SHA256 sha = SHA256.Create();

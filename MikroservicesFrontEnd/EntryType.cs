@@ -10,13 +10,13 @@ namespace MikroservicesFrontEnd
     public enum EntryType
     {
 
-        TEMPERATURE, PRESSURE, TODAY, YESTERDAY, LASTWEEK, TOMORROW
+        TODAY, YESTERDAY, LASTWEEK, TOMORROW, CURRENT
 
     }
 
     public enum EntryStyle
     {
-        HOUR, DAY
+        TEMPERATURE, PRESSURE, TEMPERATUREMID, PRESSUREMID
     }
 
 }

@@ -13,7 +13,7 @@ namespace MikroservicesFrontEnd
     class DASConnection
     {
 
-        public static async void GetAndWriteData(String uri)
+        public static async void GetData(String uri, EntryType type, EntryStyle style)
         {
             HttpClient client = new HttpClient();
             
@@ -26,16 +26,16 @@ namespace MikroservicesFrontEnd
             {
                 response = await client.GetAsync(request);
                 response.EnsureSuccessStatusCode();
-                string json = await @response.Content.ReadAsStringAsync();
+                string json = await response.Content.ReadAsStringAsync();
                 Debug.WriteLine(json);
                 json.Replace("\\", "");
-                EntryManager.UpdateData(EntryType.TODAY, json);
+                EntryManager.UpdateData(style, type, json);
             } catch(Exception ex)
             {
                 responseString = "Error: " + ex.HResult.ToString("X") + " Message: " + ex.Message;
             }
         }
-
+        /*
         public static List<Entry> TestDataDay()
         {
             string json = @"[{""Time"":""11.12.2018 00:00"", ""Value"": ""15.00""},
@@ -81,6 +81,6 @@ namespace MikroservicesFrontEnd
 
             return entry;
         }
-
+        */
     }
 }
